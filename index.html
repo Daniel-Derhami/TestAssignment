@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<script> // var array contain the data of json file
+<script> // var info contain the data of json file
 var info = [ 
   {
     "awayName": "Panthrakikos Komotini",
@@ -229,7 +229,82 @@ var info = [
     "state": "FINISHED"
   }
 ]
- 
+</script>
+
+<script type="text/javascript"> //this function check the sport info and then push it to the related display section
+
+function myFunction(){
+
+	    var x = Math.floor((Math.random() * info.length) + 0);
+
+	    if (info[x].sport == "TENNIS" && info[x].state == "NOT_STARTED") { //Check tennis games which does not started yet
+  	document.getElementById("demo").innerHTML = " Upcoming TENNIS Match "+
+	"<br>" +
+  	[info[x].homeName +" <== Meets ==> "+ info[x].awayName]
+  	+ "<br>" + "<br>"
+  	+'<button type="button" onclick="myFunction()">Home Win</button>'+ 
+     '<button class="button2" type="button" onclick="myFunction()">Draw</button>'+ 
+     '<button class="button3" type="button" onclick="myFunction()">Away Win</button>';
+
+}
+
+    if (info[x].sport == "TENNIS" && info[x].state == "STARTED") { //check tennis games which started already
+  	document.getElementById("demo").innerHTML = " OnGoing TENNIS Match "+
+	"<br>" +
+  	[info[x].homeName +" <== Meets ==> "+ info[x].awayName]
+  	+ "<br>" + "<br>"
+  	+'<button type="button" onclick="myFunction()">Home Win</button>'+ 
+     '<button class="button2" type="button" onclick="myFunction()">Draw</button>'+ 
+     '<button class="button3" type="button" onclick="myFunction()">Away Win</button>';
+
+}
+
+	    if (info[x].sport == "FOOTBALL") {  //check football games *Please note: the condition for chechikng the state of the game can be added to this section either
+  	document.getElementById("demo").innerHTML =  " OnGoing FOOTBALL Match "+
+  	"<br>" +
+  	[info[x].homeName +" ==> Hosting ==> "+ info[x].awayName] 
+  	 + "<br>" + "<br>"
+  	+'<button type="button" onclick="myFunction()" id="next">Home Win</button>'+ 
+     '<button class="button2" type="button" onclick="myFunction()">Draw</button>'+ 
+     '<button class="button3" type="button" onclick="myFunction()">Away Win</button>'
+      ;
+}
+
+	    if (info[x].sport == "SNOOKER") { //check snooker games
+  	document.getElementById("demo").innerHTML = " SNOOKER Match InPlay"+
+	"<br>" +
+  	[info[x].homeName +" <== Meets ==> "+ info[x].awayName]
+   	 + "<br>" + "<br>"
+     +'<button type="button" onclick="myFunction()" id="next">Home Win</button>'+ 
+     '<button class="button2" type="button" onclick="myFunction()">Draw</button>'+ 
+     '<button class="button3" type="button" onclick="myFunction()">Away Win</button>'
+     ;
+}
+
+	    if (info[x].sport == "HANDBALL") { //check handball games
+  	document.getElementById("demo").innerHTML = "HANDBALL Game"+
+	"<br>" +
+  	[info[x].homeName +" <== And ==> "+ info[x].awayName]
+  		+ "<br>"  + "<br>"
+        +'<button type="button" onclick="myFunction()" id="next">Home Win</button>'+ 
+     '<button class="button2" type="button" onclick="myFunction()">Draw</button>'+ 
+     '<button class="button3" type="button" onclick="myFunction()">Away Win</button>'
+     ;
+}
+
+	    if (info[x].sport == "ICE_HOCKEY") { //check ice hockey games
+  	document.getElementById("demo").innerHTML = "Ice Hockey Challenge"+
+	"<br>" +
+  	[info[x].homeName +" <== Facing ==> "+ info[x].awayName] 
+  	+ "<br>" + "<br>"
+        +'<button type="button" onclick="myFunction()" id="next">Home Win</button>'+ 
+     '<button class="button2" type="button" onclick="myFunction()">Draw</button>'+ 
+     '<button class="button3" type="button" onclick="myFunction()">Away Win</button>'
+     ;
+}
+}
+
+window.onload = myFunction; // Loaad function when the previous page lead the user in here
 </script>
 
 </body>
