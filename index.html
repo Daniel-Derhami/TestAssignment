@@ -295,7 +295,7 @@ function myFunction(){
 	"<br>" +
   	[info[x].homeName +" <== Facing ==> "+ info[x].awayName] 
   	+ "<br>" + "<br>"
-        +'<button type="button" onclick="myFunction()" id="next">Home Win</button>'+ 
+        +'<button type="button" onclick="myFunction();onClickWin()" id="next">Home Win</button>'+ 
      '<button class="button2" type="button" onclick="myFunction()">Draw</button>'+ 
      '<button class="button3" type="button" onclick="myFunction()">Away Win</button>'
      ;
@@ -305,7 +305,48 @@ function myFunction(){
 window.onload = myFunction; // Loaad function when the previous page lead the user in here
 </script>
 
-<div id="demo" style="text-align: center ; margin-left: auto"></div> <!-- this div is going to show the results -->
+
+
+
+<div id="demo" style="text-align: center ; margin-left: auto">
+  
+  
+  
+  
+  
+   <script type="text/javascript">
+    var Wclicks = 0;
+    function onClickWin() {
+        Wclicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    </script>
+    <p>Clicks: <a id="clicks">0</a></p>
+
+
+   <script type="text/javascript">
+    var Lclicks = 0;
+    function onClickLose() {
+        Lclicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    </script>
+    <p>Clicks: <a id="clicks">0</a></p>
+
+       <script type="text/javascript">
+    var Dclicks = 0;
+    function onClickDraw() {
+        Dclicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    </script>
+    <p>Clicks: <a id="clicks">0</a></p>
+    
+
+  
+  
+</div> <!-- this div is going to show the results -->
+
 
 </body>
 </html>
