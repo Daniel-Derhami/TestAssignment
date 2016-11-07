@@ -34,14 +34,10 @@
 #demo {
 	padding-top: 15px;
 	border:3px solid black;
-    width: 500px;
-    height: 200px;
+    width: 700px;
+    height: 400px;
     display: block;
  	position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     margin: auto;
     -webkit-animation-name: example; 
     -webkit-animation-duration: 5s; 
